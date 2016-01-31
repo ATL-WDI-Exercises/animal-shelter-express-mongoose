@@ -1,0 +1,15 @@
+<h1>Here is your animal: <%= animal.name %></h1>
+
+<ul>
+      <li><b>Breed : </b> <%= animal.breed %></li>
+      <li><b>Dob : </b> <%= new Date(animal.dob).toDateString() %></li>
+      <li><b>Gender : </b> <%= animal.gender %></li>
+      <li><b>Family : </b> <%= animal.family %></li>
+      <li>
+        <%if(animal.status == "orphan"){ %>
+          <a href="/animals/<%= animal.id %>/adopt">Adopt</a>
+        <% }else{ %>
+          <a href="/animals/<%= animal.id %>/abandon">Abandon</a>
+        <% } %>
+      </li>
+    </ul>
